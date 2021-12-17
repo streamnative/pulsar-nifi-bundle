@@ -18,7 +18,7 @@
     
     <groupId>io.streamnative.connectors</groupId>
     <artifactId>nifi-pulsar-bundle</artifactId>
-    <version>1.14.0</version>
+    <version>1.14.1-rc-2</version>
     <packaging>pom</packaging>
     
     <name>${project.groupId}:${project.artifactId}</name>
