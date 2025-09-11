@@ -134,8 +134,8 @@
                     <version>${maven-source-plugin.version}</version>
                     <executions>
                         <execution>
-                            <id>attach-sources</id>
-                            <phase>deploy</phase>
+                            <id>custom-attach-sources</id>
+                            <phase>package</phase>
                             <goals>
                                 <goal>jar</goal>
                             </goals>
@@ -161,6 +161,24 @@
                         <version>${groovy-eclipse-batch.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>never</phase>
+                    </execution>
+                    <execution>
+                        <id>custom-attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
