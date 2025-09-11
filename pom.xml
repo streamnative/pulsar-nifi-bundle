@@ -131,14 +131,20 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>${maven-source-plugin.version}</version>
                     <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <phase>never</phase>
+                        </execution>
                         <execution>
                             <id>custom-attach-sources</id>
                             <phase>package</phase>
                             <goals>
                                 <goal>jar</goal>
                             </goals>
+                            <configuration>
+                                <classifier>sources</classifier>
+                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
@@ -163,23 +169,6 @@
                 </dependencies>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <phase>never</phase>
-                    </execution>
-                    <execution>
-                        <id>custom-attach-sources</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
